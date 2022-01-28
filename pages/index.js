@@ -25,6 +25,45 @@ const query = gql`
               description
               id
           }
+          ... on CalloutRecord {
+              __typename
+              bigTitle
+              smallTitle
+              description
+              id
+              image {
+                url
+                width
+                height
+              }
+          }
+          ... on LearnSectionRecord {
+              __typename
+              hoursOfContent
+              numberOfLessons
+              title
+              id
+              learningPoints {
+                title
+                id
+              }
+          }
+          ... on PricingSectionRecord {
+              __typename
+              title
+              id
+              pricingCards {
+                isFree
+                priceInCents
+                priceSuffix
+                title
+                id
+                description
+                finePrint
+                featured
+                buttonText 
+              }
+          }
         }
     }
   }
